@@ -20,7 +20,7 @@ a set of outputs, and maybe perform some nice transformations along the way. Tha
         (Time.now - self.birthdate).years
       end
 
-      def favorite_color
+      def fave_color
         "blue"
       end
     end
@@ -32,7 +32,7 @@ a set of outputs, and maybe perform some nice transformations along the way. Tha
     irb> UserMapping.new(birthdate: 19.years.ago).age
     => 19
     irb> UserMapping.new(name: "Guybrush Threepwood", birthdate: 19.years.ago).to_h
-    irb> { display_name: "Guybrush Threepwood", birthdate: 19.years.ago, age: 19, favorite_color: "blue" }
+    => { display_name: "Guybrush Threepwood", birthdate: 19.years.ago, age: 19, fave_color: "blue" }
 
 
 Collek is a simple DSL for building classes that use plain old methods to define
