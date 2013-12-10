@@ -9,12 +9,12 @@ it's a shitty mess. Am I right? Of course I am.
 Or maybe you're writing a JSON API in Rails, and you're using #as_json, and you need canonical
 route representations of your entities, and shoving them into your model feels ridiculous.
 
-Friend, there is a better way, and it uses methods. Collek is a pattern to map one set of
-columns to another set, and maybe perform some nice transformations along the way. That's it.
+Friend, there is a better way, and it uses methods. Collek is a pattern to map a set of inputs to
+a set of outputs, and maybe perform some nice transformations along the way. That's it.
 
     class UserMapping < Collek::Mapping
-      column :birthdate
-      column :display_name, method: :name
+      output :birthdate
+      output :display_name, input: :name
 
       def age
         (Time.now - self.birthdate).years

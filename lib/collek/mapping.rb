@@ -1,9 +1,9 @@
 module Collek
   class Mapping
     class << self
-      def column(name, opts={}, &block)
+      def output(name, opts={}, &block)
         if block.nil?
-          method_name = opts[:method] || name
+          method_name = opts[:input] || name
           self.send(:define_method, name) { self.object.send(method_name) }
         else
           self.send(:define_method, name, &block)
